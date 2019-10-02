@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<title>Upload a userdata File</title>
+<form action="{{ APP_URI }}" method="post" enctype="multipart/form-data">
+<input type="file" name="userdata" id="userdata">
+<input type="submit" value="Upload user_data YAML File" name="submit">
+</form>
+<h2>To Upload from CLI:</h2>
+<pre>
+curl --output configdrive.iso -X POST http(s)://[host]:[port]/{{ APP_URI }} -H 'Content-Type: text/x-yaml' --data-binary @userdata.yaml
+</pre>
+</html>
